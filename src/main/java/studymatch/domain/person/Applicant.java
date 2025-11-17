@@ -1,4 +1,6 @@
 package studymatch.domain.person;
 
-public class Applicant {
-}
+import studymatch.domain.time.TimeMask;
+
+public record Applicant(String name, String field, String region, TimeMask availableTime, String motivation) {}
+
