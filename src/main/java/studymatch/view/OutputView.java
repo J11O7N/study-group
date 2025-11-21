@@ -26,5 +26,11 @@ public class OutputView {
                     + " / 가능 시간: " + TimeMaskFormatter.format(a.availableTime())
                     + " / 동기: " + a.motivation());
         }
+
+        System.out.println("- 추천 장소: "
+                + (result.recommendCafe() != null
+                ? result.recommendCafe().name()
+                : "추천할 수 있는 장소 없음"));
+
     }
 }

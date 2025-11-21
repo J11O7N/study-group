@@ -10,7 +10,7 @@ import studymatch.domain.time.TimeMaskParser;
 
 public class ApplicantGenerator {
     private final Faker faker = new Faker(new Locale("ko"));
-    private final List<String> regions = List.of("목동", "구일", "구로", "신도림", "홍대");
+    private final List<String> regions = List.of("강남", "홍대", "신촌", "건대");
     private final List<String> fields = List.of("백엔드", "프론트엔드", "안드로이드");
 
     public List<Applicant> createApplicants(int count) {
