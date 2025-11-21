@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="studymatch.ui.fx.MainViewController"
+      spacing="12">
+
+    <!-- 리더 정보 -->
+    <TitledPane text="리더 정보" expanded="true">
+        <content>
+            <GridPane hgap="10" vgap="8">
+                <padding>
+                    <Insets top="10" left="10" bottom="10" right="10"/>
+                </padding>
+
+                <Label text="이름:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="leaderNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="분야:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="leaderFieldChoice" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="가능 지역:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ListView fx:id="regionListView" prefHeight="100"
+                          GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="가능 시간:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="timeExpressionField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="키워드:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="keywordsField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="지원자 수:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <Spinner fx:id="applicantCountSpinner"
+                         GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            </GridPane>
+        </content>
+    </TitledPane>
+
+    <Button text="스터디 매칭 실행" onAction="#onRunMatch"/>
+
+    <!-- 결과 출력 -->
+    <TitledPane text="결과" expanded="true">
+        <content>
+            <VBox spacing="8">
+                <Label fx:id="commonTimeLabel"/>
+
+                <TableView fx:id="applicantTable" prefHeight="200">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="이름" prefWidth="120"/>
+                        <TableColumn fx:id="fieldColumn" text="분야" prefWidth="100"/>
+                        <TableColumn fx:id="regionsColumn" text="지역" prefWidth="180"/>
+                        <TableColumn fx:id="timeColumn" text="가능 시간" prefWidth="180"/>
+                        <TableColumn fx:id="keywordsColumn" text="키워드" prefWidth="150"/>
+                    </columns>
+                </TableView>
+
+                <TextArea fx:id="logArea" prefRowCount="6"/>
+            </VBox>
+        </content>
+    </TitledPane>
+
+</VBox>
