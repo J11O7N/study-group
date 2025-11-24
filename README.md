@@ -154,9 +154,6 @@ studymatch/
 
 ### Stream 파이프라인으로 최종 해결
 
-```
-
----
 
 # 3️⃣ JavaFX UI 구축 과정
 
